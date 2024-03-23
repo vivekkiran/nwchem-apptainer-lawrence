@@ -16,7 +16,8 @@ export SLURM_NTASKS=1
 module purge
 module load gcc/13.1.0
 module load openmpi/4.1.4
-NWCHEM_DIR=/nwchem/
+mkdir "$HOME/nwchem_oras"
+export NWCHEM_DIR="$HOME/nwchem"
 singularity pull -F --name ~/nwchem_`id -u`.img  oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x:latest
-srun -N $SLURM_NNODES -n $SLURM_NTASKS cp ~/nwchem_`id -u`.img /nwchem/nwchem.img
-srun singularity exec /nwchem/nwchem.img nwchem "input file"
+srun -N $SLURM_NNODES -n $SLURM_NTASKS cp ~/nwchem_`id -u`.img $NWCHEM_DIR/nwchem.img
+srun singularity exec $NWCHEM_DIR/nwchem.img nwchem "input file"
