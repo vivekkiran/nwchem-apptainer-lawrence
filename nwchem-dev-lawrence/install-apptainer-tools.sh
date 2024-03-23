@@ -3,7 +3,8 @@
 export APPTAINER_CACHEDIR="$HOME/.apptainer/cache"
 export APPTAINER_SINGULARITY_PATH="$HOME/apptainer-tools"
 
-
+delete_cache = false
+delete_apptainer = false
 
 while getopts delete_cache:delete_apptainer flag
 do
