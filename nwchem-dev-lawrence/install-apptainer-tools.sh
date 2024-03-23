@@ -18,6 +18,10 @@ export SINGULARITY_BIN="$APPTAINER_SINGULARITY_BIN $HOME/apptainer-tools/bin/sin
 
 export PATH="$PATH:$APPTAINER_SINGULARITY_PATH/apptainer-tools/bin"
 
+ln -s $APPTAINER_BIN /usr/local/bin/apptainer
+ln -s $APPTAINER_BIN /usr/local/bin/singularity
+
+
 source ~/.bashrc
 
 $APPTAINER_SINGULARITY_PATH/bin/apptainer  pull -F --name ./nwchems_`id -u`.img oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x:latest
