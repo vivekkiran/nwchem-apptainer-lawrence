@@ -10,7 +10,7 @@
 source /etc/profile.d/modules.sh
 export https_proxy=http://proxy.emsl.pnl.gov:3128
 module purge
-module load gcc/9.3.0
+module load gcc/13.1.0
 module load openmpi/4.1.4
 SCRATCH=/big_scratch
 singularity pull -F --name ~/nwchem_`id -u`.img  oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x:latest
