@@ -1,8 +1,10 @@
 Bootstrap: docker
 From: ubuntu:20.04
 %labels
-MAINTAINER  Edoardo Apra <edoardo.apra@pnnl.gov>
+MAINTAINER  Sravya Sriramadasu <sravya.sriramadasu@coyotes.usd.edu>, Vivek Kiran Ballakur <vivek.kiran.ballakur@coyotes.usd.edu>
+
 %post
+#based on earlier work by Edoardo Apra <edoardo.apra@pnnl.gov>
 #based on earlier work by Vladimir Konjkov <Konjkov.VV@gmail.com>
 #
 # Create the image with the command
