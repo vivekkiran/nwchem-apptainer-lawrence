@@ -12,6 +12,7 @@ export https_proxy=http://proxy.emsl.pnl.gov:3128
 module purge
 module load gcc/9.3.0
 module load openmpi/4.1.4
+SCRATCH=/big_scratch
 singularity pull -F --name ~/nwchem_`id -u`.img  oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x:latest
 srun -N $SLURM_NNODES -n $SLURM_NNODES cp ~/nwchem_`id -u`.img /big_scratch/nwchem.img
 srun singularity exec /big_scratch/nwchem.img nwchem "input file"
