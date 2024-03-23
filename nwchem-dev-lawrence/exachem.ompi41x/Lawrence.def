@@ -1,13 +1,10 @@
 Bootstrap: docker
 From: ubuntu:22.04
 %labels
-%labels
-MAINTAINER  Vivek Kiran Ballakur <vivek.kiran.ballakur@coyotes.usd.edu>
+MAINTAINER  Sravya Sriramadasu <sravya.sriramadasu@coyotes.usd.edu>, Vivek Kiran Ballakur <vivek.kiran.ballakur@coyotes.usd.edu>
 
-%post
 #based on earlier work by Edoardo Apra <edoardo.apra@pnnl.gov>
 #based on earlier work by Vladimir Konjkov <Konjkov.VV@gmail.com>
-#
 
 %setup
     #!/bin/bash
