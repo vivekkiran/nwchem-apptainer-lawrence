@@ -13,13 +13,12 @@ curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install
 
 export APPTAINER_CACHEDIR="$HOME/.apptainer/cache"
 export APPTAINER_SINGULARITY_PATH="$HOME/apptainer-tools"
-export APPTAINER_BIN="$APPTAINER_SINGULARITY_BIN $HOME/apptainer-tools/bin/apptainer"
-export SINGULARITY_BIN="$APPTAINER_SINGULARITY_BIN $HOME/apptainer-tools/bin/singularity"
+export APPTAINER_BIN="$APPTAINER_SINGULARITY_PATH/bin/apptainer"
+export SINGULARITY_BIN="#APPTAINER_SINGULARITY_PATH/bin/singularity"
 
-export PATH="$PATH:$APPTAINER_SINGULARITY_PATH/apptainer-tools/bin"
+export PATH="$PATH:$APPTAINER_SINGULARITY_PATH/bin"
 
-ln -sf $APPTAINER_BIN ~/.local/bin/apptainer
-ln -sf $SINGULARITY_BIN ~/.local/bin/singularity
+ln -s $APPTAINER_SINGULARITY_PATH ~/.local/bin
 
 
 source ~/.bashrc
