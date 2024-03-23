@@ -10,8 +10,8 @@
 source /etc/profile.d/modules.sh
 # export https_proxy=http://proxy.emsl.pnl.gov:3128
 
-export SLURM_NNODES=4
-export SLURM_NTASKS=4
+export SLURM_NNODES=1
+export SLURM_NTASKS=1
 
 module purge
 module load gcc/13.1.0
