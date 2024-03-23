@@ -8,5 +8,5 @@ curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install
 
 if [ -d "$APPTAINER_SINGULARITY_PATH" ]; then rm -Rf $APPTAINER_SINGULARITY_PATH; fi
 export APPTAINER_CACHEDIR="$HOME/.apptainer/cache"
-export APPTAINER_SINGULARITY_PATH="$HOME/apptainer-tools/bin"
+export APPTAINER_SINGULARITY_PATH="$HOME/apptainer-tools"
 
