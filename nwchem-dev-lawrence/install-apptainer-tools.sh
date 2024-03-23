@@ -31,7 +31,3 @@ ln -s $APPTAINER_SINGULARITY_PATH ~/.local/bin
 
 source ~/.bashrc
 source ~/.bash_profile
-
-apptainer  pull -F --name ./nwchems_`id -u`.img oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x:latest
-
-
