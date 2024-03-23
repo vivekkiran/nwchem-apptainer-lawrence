@@ -14,14 +14,14 @@ do
 done
 
 
-if $delete-cache; then
-      echo "-delete_cache was triggered, Parameter: $OPTARG" >&2
+if $delete_cache; then
+      echo "--delete_cache was triggered, Parameter: $OPTARG" >&2
       if [ -d "$APPTAINER_CACHEDIR" ]; then rm -Rf $APPTAINER_CACHEDIR; fi
 fi
 
 
-if $elete-apptainer; then
- echo "-delete_apptainer was triggered, Parameter: $OPTARG" >&2
+if $delete_apptainer; then
+ echo "--delete_apptainer was triggered, Parameter: $OPTARG" >&2
       if [ -d "$APPTAINER_SINGULARITY_PATH" ]; then rm -Rf $APPTAINER_SINGULARITY_PATH; fi
 
 fi
