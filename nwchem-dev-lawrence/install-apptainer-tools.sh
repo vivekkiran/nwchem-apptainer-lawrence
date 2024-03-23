@@ -4,39 +4,29 @@ export APPTAINER_CACHEDIR="$HOME/.apptainer/cache"
 export APPTAINER_SINGULARITY_PATH="$HOME/apptainer-tools"
 
 
-while getopts ":delete-cache" opt; do
-  case $opt in
-    a)
-      echo "-delete-cache was triggered, Parameter: $OPTARG" >&2
-      if [ -d "$APPTAINER_CACHEDIR" ]; then rm -Rf $APPTAINER_CACHEDIR; fi
-      ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
-      ;;
-    :)
-      echo "Option -$OPTARG requires an argument." >&2
-      exit 1
-      ;;
-  esac
+
+while getopts delete-cache:delete-apptainer flag
+do
+    case "${flag}" in
+        a) delete-cache=${OPTARG};;
+        b) delete-apptainer=${OPTARG};;
+    esac
 done
 
-while getopts ":delete-apptainer" opt; do
-  case $opt in
-    a)
-      echo "-delete-apptainer was triggered, Parameter: $OPTARG" >&2
+
+if $delete-cache; then
+      echo "-delete-cache was triggered, Parameter: $OPTARG" >&2
+      if [ -d "$APPTAINER_CACHEDIR" ]; then rm -Rf $APPTAINER_CACHEDIR; fi
+fi
+
+
+if $elete-apptainer; then
+ echo "-delete-apptainer was triggered, Parameter: $OPTARG" >&2
       if [ -d "$APPTAINER_SINGULARITY_PATH" ]; then rm -Rf $APPTAINER_SINGULARITY_PATH; fi
-      ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
-      ;;
-    :)
-      echo "Option -$OPTARG requires an argument." >&2
-      exit 1
-      ;;
-  esac
-done
+
+fi
+
+
 
 curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install-unprivileged.sh | \
     bash -s - $HOME/apptainer-tools
