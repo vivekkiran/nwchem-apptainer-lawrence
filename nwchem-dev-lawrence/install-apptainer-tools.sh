@@ -5,23 +5,23 @@ export APPTAINER_SINGULARITY_PATH="$HOME/apptainer-tools"
 
 
 
-while getopts delete-cache:delete-apptainer flag
+while getopts delete_cache:delete_apptainer flag
 do
     case "${flag}" in
-        a) delete-cache=${OPTARG};;
-        b) delete-apptainer=${OPTARG};;
+        a) delete_cache=${OPTARG};;
+        b) delete_apptainer=${OPTARG};;
     esac
 done
 
 
 if $delete-cache; then
-      echo "-delete-cache was triggered, Parameter: $OPTARG" >&2
+      echo "-delete_cache was triggered, Parameter: $OPTARG" >&2
       if [ -d "$APPTAINER_CACHEDIR" ]; then rm -Rf $APPTAINER_CACHEDIR; fi
 fi
 
 
 if $elete-apptainer; then
- echo "-delete-apptainer was triggered, Parameter: $OPTARG" >&2
+ echo "-delete_apptainer was triggered, Parameter: $OPTARG" >&2
       if [ -d "$APPTAINER_SINGULARITY_PATH" ]; then rm -Rf $APPTAINER_SINGULARITY_PATH; fi
 
 fi
