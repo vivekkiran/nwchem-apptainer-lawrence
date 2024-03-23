@@ -6,7 +6,7 @@ curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install
 
 ./apptainer-tools/bin/apptainer  pull -F --name ./nwchems_`id -u`.img oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x:latest
 
-rm -r "$HOME/apptainer-tools/bin"
+if [ -d "$APPTAINER_SINGULARITY_PATH" ]; then rm -Rf $APPTAINER_SINGULARITY_PATH; fi
 export APPTAINER_CACHEDIR="$HOME/.apptainer/cache"
 export APPTAINER_SINGULARITY_PATH="$HOME/apptainer-tools/bin"
 
