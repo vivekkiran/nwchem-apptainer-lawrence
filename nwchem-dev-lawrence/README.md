@@ -8,8 +8,7 @@ This repository is contains Singularity/Apptainer Recipies to run NWChem on Lawr
 
 References:
 
-Based on earlier work by Edoardo Apra <edoardo.apra@pnnl.gov>
-Based on earlier work by Vladimir Konjkov <Konjkov.VV@gmail.com>
+Based on earlier work by Edoardo Apra <edoardo.apra@pnnl.gov> and Vladimir Konjkov <Konjkov.VV@gmail.com>
 
 
 See https://github.com/edoapra/nwchem-singularity/tree/master/nwchem-dev.ompi41x   
