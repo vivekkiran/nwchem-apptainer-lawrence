@@ -8,7 +8,7 @@
 #SBATCH -J singularity_library
 #SBATCH --export ALL
 source /etc/profile.d/modules.sh
-export https_proxy=http://proxy.emsl.pnl.gov:3128
+# export https_proxy=http://proxy.emsl.pnl.gov:3128
 module purge
 module load gcc/13.1.0
 module load openmpi/4.1.4
