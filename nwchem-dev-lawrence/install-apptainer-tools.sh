@@ -9,8 +9,8 @@ delete_apptainer = false
 while getopts delete_cache:delete_apptainer flag
 do
     case "${flag}" in
-        a) delete_cache=${OPTARG};;
-        b) delete_apptainer=${OPTARG};;
+        delete_cache) delete_cache=${OPTARG};;
+        delete_apptainer) delete_apptainer=${OPTARG};;
     esac
 done
 
