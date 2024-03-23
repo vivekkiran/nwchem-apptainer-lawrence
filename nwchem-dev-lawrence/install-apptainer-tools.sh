@@ -13,7 +13,7 @@ curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install
 
 export APPTAINER_CACHEDIR="$HOME/.apptainer/cache"
 export APPTAINER_SINGULARITY_PATH="$HOME/apptainer-tools"
-export PATH="$APPTAINER_SINGULARITY_PATH/apptainer-tools/bin"
+export PATH="$PATH:$APPTAINER_SINGULARITY_PATH/apptainer-tools/bin"
 
 source ~/.bashrc
 
