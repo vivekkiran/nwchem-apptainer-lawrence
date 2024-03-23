@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install-unprivileged.sh | \
-    bash -s - $HOME/apptainer-tools
-
-
-./apptainer-tools/bin/apptainer  pull -F --name ./nwchems_`id -u`.img oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x:latest
-
 while getopts ":delete-cache:" opt; do
   case $opt in
     a)
@@ -39,6 +33,12 @@ while getopts ":delete-apptainer:" opt; do
       ;;
   esac
 done
+
+curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install-unprivileged.sh | \
+    bash -s - $HOME/apptainer-tools
+
+
+./apptainer-tools/bin/apptainer  pull -F --name ./nwchems_`id -u`.img oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x:latest
 
 export APPTAINER_CACHEDIR="$HOME/.apptainer/cache"
 export APPTAINER_SINGULARITY_PATH="$HOME/apptainer-tools"
