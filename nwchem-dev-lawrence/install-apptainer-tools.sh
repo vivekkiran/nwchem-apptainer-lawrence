@@ -7,8 +7,8 @@ if [ -d "$APPTAINER_CACHEDIR" ]; then rm -rf $APPTAINER_CACHEDIR; fi
 # if [ -d "$APPTAINER_SINGULARITY_PATH" ]; then rm -rf $APPTAINER_SINGULARITY_PATH; fi
 
 if ( ! -d "$APPTAINER_SINGULARITY_PATH" ) then
-    rm -rf $APPTAINER_SINGULARITY_PATH
-endif
+    rm -rf $APPTAINER_SINGULARITY_PATH;
+fi
 
 
 curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install-unprivileged.sh | \
