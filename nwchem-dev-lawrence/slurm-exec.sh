@@ -9,10 +9,14 @@
 #SBATCH --export ALL
 source /etc/profile.d/modules.sh
 # export https_proxy=http://proxy.emsl.pnl.gov:3128
+
+export SLURM_NNODES = 4
+export SLURM_NTASKS = 4
+
 module purge
 module load gcc/13.1.0
 module load openmpi/4.1.4
-SCRATCH=/big_scratch
+NWCHEM_DIR=/nwchem/
 singularity pull -F --name ~/nwchem_`id -u`.img  oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x:latest
-srun -N $SLURM_NNODES -n $SLURM_NNODES cp ~/nwchem_`id -u`.img /big_scratch/nwchem.img
-srun singularity exec /big_scratch/nwchem.img nwchem "input file"
+srun -N $SLURM_NNODES -n $SLURM_NTASKS cp ~/nwchem_`id -u`.img /nwchem/nwchem.img
+srun singularity exec /nwchem/nwchem.img nwchem "input file"
