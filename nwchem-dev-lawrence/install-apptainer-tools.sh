@@ -18,8 +18,8 @@ export SINGULARITY_BIN="$APPTAINER_SINGULARITY_BIN $HOME/apptainer-tools/bin/sin
 
 export PATH="$PATH:$APPTAINER_SINGULARITY_PATH/apptainer-tools/bin"
 
-ln -s $APPTAINER_BIN /usr/local/bin/apptainer
-ln -s $APPTAINER_BIN /usr/local/bin/singularity
+ln -s $APPTAINER_BIN ~/.local/bin/apptainer
+ln -s $APPTAINER_BIN ~/.local/bin//singularity
 
 
 source ~/.bashrc
