@@ -4,7 +4,7 @@ export APPTAINER_CACHEDIR="$HOME/.apptainer/cache"
 export APPTAINER_SINGULARITY_PATH="$HOME/apptainer-tools"
 
 
-while getopts ":delete-cache:" opt; do
+while getopts ":delete-cache" opt; do
   case $opt in
     a)
       echo "-delete-cache was triggered, Parameter: $OPTARG" >&2
@@ -21,7 +21,7 @@ while getopts ":delete-cache:" opt; do
   esac
 done
 
-while getopts ":delete-apptainer:" opt; do
+while getopts ":delete-apptainer" opt; do
   case $opt in
     a)
       echo "-delete-apptainer was triggered, Parameter: $OPTARG" >&2
