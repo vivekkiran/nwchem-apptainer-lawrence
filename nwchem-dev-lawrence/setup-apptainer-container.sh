@@ -2,6 +2,7 @@
 # apptainer remote add --no-login SylabsCloud cloud.sycloud.io
 apptainer pull --arch amd64 docker://rockylinux/rockylinux:9
 
+apptainer run ---nvccli rockylinux-gpu.sif
 
 #  apptainer build --sandbox tl --arch amd64 docker://rockylinux/rockylinux:9
 
@@ -13,8 +14,8 @@ apptainer exec fakeroot yum-config-manager --enable nvidia-container-toolkit-exp
 apptainer exec fakeroot yum install -y nvidia-container-toolkit
 
 
-apptainer build --sandbox rockylinux-gpu  --arch amd64 docker://rockylinux/rockylinux:9
+# apptainer build --sandbox rockylinux-gpu  --arch amd64 docker://rockylinux/rockylinux:9
 
-apptainer run ---nvccli rockylinux-gpu.sif
+# apptainer run ---nvccli rockylinux-gpu.sif
 
 # apptainer pull ghcr.io/easybuilders/almalinux-8.6
