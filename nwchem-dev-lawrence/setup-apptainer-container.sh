@@ -9,8 +9,8 @@ curl -s -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-contai
    apptainer exec fakeroot tee /etc/yum.repos.d/nvidia-container-toolkit.repo
 
 
-yum-config-manager --enable nvidia-container-toolkit-experimental
-yum install -y nvidia-container-toolkit
+apptainer exec fakeroot yum-config-manager --enable nvidia-container-toolkit-experimental
+apptainer exec fakeroot yum install -y nvidia-container-toolkit
 
 
 apptainer build --sandbox rockylinux-gpu  --arch amd64 docker://rockylinux/rockylinux:9
