@@ -31,3 +31,8 @@ ln -s $APPTAINER_SINGULARITY_PATH ~/.local/bin
 
 source ~/.bashrc
 source ~/.bash_profile
+
+singularity --version
+apptainer --version
+
+apptainer remote add --no-login SylabsCloud cloud.sycloud.io
